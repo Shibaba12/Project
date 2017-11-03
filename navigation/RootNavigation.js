@@ -9,11 +9,12 @@ import MapScreen from '../screens/MapScreen';
 import ShareScreen from'../screens/ShareScreen';
 import TrainerScreen from '../screens/TrainerScreen';
 import ExerciseScreen from'../screens/ExerciseScreen';
+import SingleTrainerScreen from '../screens/SingleTrainerScreen';
 
 const RootStackNavigator = StackNavigator(
   {
     Main: {
-      screen: MainTabNavigator,
+      screen: MainTabNavigator
     },
     SingleExercise: {
       screen: SingleExerciseScreen
@@ -29,6 +30,9 @@ const RootStackNavigator = StackNavigator(
     },
     TrainerScreen:{
       screen: TrainerScreen
+    },
+    SingleTrainer:{
+      screen: SingleTrainerScreen
     }
   },
   {

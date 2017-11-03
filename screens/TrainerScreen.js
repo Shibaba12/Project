@@ -7,41 +7,39 @@ import {
   View,
   Button,
   FlatList,
-  TouchableHighlight
 } from 'react-native';
 import Layout from '../constants/Layout';
 import Database from '../api/database';
-import Overlay from '../components/Overlay';
 
 // Importing Menu Item components that we have created
 import MenuItem from '../components/MenuItem';
-import ImageExercise from '../components/ImageExercise';
 import InputTest from '../components/InputTest';
+import ImageExercise from '../components/ImageExercise';
+import SingleTrainerScreen from '../screens/SingleTrainerScreen';
 
-export default class PlanScreen extends React.Component {
+export default class TrainerScreen extends React.Component {
   static navigationOptions = {
    title: "Trainers"
   };
   constructor(props){
     super(props);
     this.state = {
-      exercises: []
+      trainers: []
     }
+    this.handlePress = this.handlePress.bind(this)
   }
 
   componentDidMount() {
-    Database.getExercises( (exercises) => {
+    Database.getTrainers( (trainers) => {
       this.setState({
-        exercises: exercises
+        trainers: trainers
       })
     });
   }
 
   handlePress(name, description) {
-    this.props.navigation.navigate('SingleExercise', {name: name, description: description})
-  }
-
-    
+    this.props.navigation.navigate('SingleTrainer', {name: name, description: description})
+  }   
 
   render() {
     const { navigate } = this.props.navigation;
@@ -49,14 +47,14 @@ export default class PlanScreen extends React.Component {
       <ScrollView>           
 
       <FlatList
-             data={Object.values(this.state.exercises)}
+             data={Object.values(this.state.trainers)}
              renderItem={({item})=> 
                         <ImageExercise 
                         title={item.name} 
                         id={item.name}
                         handlePress={this.handlePress.bind(this)}
                         description={item.type}
-                        imageSource={require('../assets/images/exercise.jpg')}
+                        imageSource={item.url}
                         />}
              />
              
