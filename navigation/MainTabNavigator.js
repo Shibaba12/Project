@@ -9,6 +9,8 @@ import HomeScreen from '../screens/HomeScreen';
 import PlanScreen from '../screens/PlanScreen';
 import ShareScreen from '../screens/ShareScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import SettingScreen from '../screens/SettingsScreen';
+import ExerciseScreen from '../screens/ExerciseScreen';
 
 export default TabNavigator(
   {

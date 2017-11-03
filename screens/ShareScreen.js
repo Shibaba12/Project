@@ -3,6 +3,8 @@ import {
   Image,
   Text,
   View,
+  StyleSheet,
+  ScrollView
 } from 'react-native';
 import Layout from '../constants/Layout';
 import Database from '../api/database';

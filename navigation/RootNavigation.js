@@ -6,7 +6,9 @@ import MainTabNavigator from './MainTabNavigator';
 import SingleExerciseScreen from'../screens/SingleExerciseScreen';
 import registerForPushNotificationsAsync from '../api/registerForPushNotificationsAsync';
 import MapScreen from '../screens/MapScreen';
-import ShareScreen from'../screens/ShareScreen'
+import ShareScreen from'../screens/ShareScreen';
+import TrainerScreen from '../screens/TrainerScreen';
+import ExerciseScreen from'../screens/ExerciseScreen';
 
 const RootStackNavigator = StackNavigator(
   {
@@ -16,11 +18,17 @@ const RootStackNavigator = StackNavigator(
     SingleExercise: {
       screen: SingleExerciseScreen
     },
+    ExerciseScreen: {
+      screen: ExerciseScreen
+    },
     MapScreen: {
       screen: MapScreen
     },//add new screen here for navigation!!
     ShareScreen:{
       screen: ShareScreen
+    },
+    TrainerScreen:{
+      screen: TrainerScreen
     }
   },
   {

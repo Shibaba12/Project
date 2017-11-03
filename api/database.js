@@ -68,14 +68,21 @@ class Database {
      * Not Authentication
      */
     static getExercises(callback) {
-        let ref = firebase.database().ref().child('Exercises');
+        let ref = firebase.database().ref().child('exercises');
         ref.on('value', (snap) => {
             callback(snap.val())
         })
     }
 
     static getPrograms(callback) {
-        let ref = firebase.database().ref().child('Programs');
+        let ref = firebase.database().ref().child('programs');
+        ref.on('value', (snap) => {
+            callback(snap.val())
+        })
+    }
+
+    static getTrainers(callback) {
+        let ref = firebase.database().ref().child('trainers');
         ref.on('value', (snap) => {
             callback(snap.val())
         })
@@ -89,8 +96,8 @@ class Database {
         })
     }
 
-    static filterExercises(ExercisesID, callback) {
-        let ref = firebase.database().ref().child('Exercises');
+    static filterExercises(exercisesID, callback) {
+        let ref = firebase.database().ref().child('exercises');
         // First We Create an empty all Exercises Variable
         let allExercises = ''
         // Now we fill our variable with the exercises from database
@@ -98,7 +105,7 @@ class Database {
             allExercises = Object.values(snap.val())
         })
         // Here We create an array from our exercises list coming from programs
-        let programExercises = ExercisesID.split(",")
+        let programExercises = exercisesID.split(",")
         
         // Here We use 'map' function to apply filter for each element of programExercises Array
         let filteredList = programExercises.map((pExercise) => {

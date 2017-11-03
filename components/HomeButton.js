@@ -17,7 +17,7 @@ class HomeButton extends Component {
 
                 <TouchableHighlight style={styles.touchable}
                 onPress={() => {
-                    this.props.handleClick('SingleExercise')
+                    this.props.handleClick('TrainerScreen')
                  }}>
                 <Image source={require('../assets/images/trainers.png')} style={{width: 100, height: 100}}/>
                 </TouchableHighlight>
@@ -33,7 +33,7 @@ class HomeButton extends Component {
                 <View style={{flex: 1,flexDirection: 'column',justifyContent: 'space-between'}}>
                 <TouchableHighlight style={styles.touchable}
                 onPress={() => {
-                    this.setModalVisible(true)
+                    this.props.handleClick('ExerciseScreen')
                 }}>
                 <Image source={require('../assets/images/programs.png')} style={{width: 100, height: 100}}/>
                 </TouchableHighlight>
