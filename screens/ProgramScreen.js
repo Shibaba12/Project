@@ -3,9 +3,9 @@ import { ScrollView, StyleSheet, FlatList, Text } from 'react-native';
 import Database from '../api/database';
 import ProgramCard from '../components/ProgramCard'
 
-export default class ProgramsScreen extends React.Component {
+export default class ProgramScreen extends React.Component {
   static navigationOptions = {
-    title: 'Programs',
+    title: 'Program',
   };
 
   constructor(props){
@@ -37,7 +37,7 @@ export default class ProgramsScreen extends React.Component {
           renderItem={({item}) => 
           <ProgramCard
             title={item.name}
-            exercises={item.exercises}
+            programs={item.programs}
             handlePress={this.handlePress.bind(this)}/>}
           />
       </ScrollView>

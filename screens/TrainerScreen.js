@@ -15,7 +15,6 @@ import Database from '../api/database';
 import MenuItem from '../components/MenuItem';
 import InputTest from '../components/InputTest';
 import ImageExercise from '../components/ImageExercise';
-import SingleTrainerScreen from '../screens/SingleTrainerScreen';
 
 export default class TrainerScreen extends React.Component {
   static navigationOptions = {

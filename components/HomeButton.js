@@ -24,7 +24,7 @@ class HomeButton extends Component {
 
                 <TouchableHighlight style={styles.touchable}
                 onPress={() => {
-                    this.setModalVisible(true)
+                    this.props.handleClick('TimetableScreen')
                 }}>
                 <Image source={require('../assets/images/timetable.png')} style={{width: 100, height: 100}}/>
                 </TouchableHighlight>
@@ -33,14 +33,14 @@ class HomeButton extends Component {
                 <View style={{flex: 1,flexDirection: 'column',justifyContent: 'space-between'}}>
                 <TouchableHighlight style={styles.touchable}
                 onPress={() => {
-                    this.props.handleClick('ExerciseScreen')
+                    this.props.handleClick('ProgramScreen')
                 }}>
                 <Image source={require('../assets/images/programs.png')} style={{width: 100, height: 100}}/>
                 </TouchableHighlight>
 
                 <TouchableHighlight style={styles.touchable}
                 onPress={() => {
-                    this.setModalVisible(true)
+                    this.props.handleClick('ExerciseScreen')
                 }}>
                 <Image source={require('../assets/images/new.png')} style={{width: 100, height: 100}}/>
                 </TouchableHighlight>

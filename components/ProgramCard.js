@@ -8,13 +8,13 @@ class ProgramCard extends Component {
     constructor(props){
         super(props);
         this.state = {
-          exercises: []
+          programs: []
         }
       }
 
 componentDidMount() {
-    Database.filterExercises(this.props.exercises, (filterExercises) => {
-        this.setState({ exercises: filterExercises})
+    Database.filterPrograms(this.props.programs, (filterPrograms) => {
+        this.setState({ programs: filterPrograms})
     })
 }
 
@@ -25,7 +25,7 @@ componentDidMount() {
                 <Text style={styles.title}>{this.props.title}</Text>
                 <View style={{flexDirection: 'column'}}>
                 <FlatList
-                    data={this.state.exercises}
+                    data={this.state.programs}
                     renderItem={({item}) =>
                     <ImageExercise
                         title={item.name}

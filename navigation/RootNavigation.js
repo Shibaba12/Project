@@ -10,6 +10,8 @@ import ShareScreen from'../screens/ShareScreen';
 import TrainerScreen from '../screens/TrainerScreen';
 import ExerciseScreen from'../screens/ExerciseScreen';
 import SingleTrainerScreen from '../screens/SingleTrainerScreen';
+import ProgramScreen from '../screens/ProgramScreen';
+import TimetableScreen from '../screens/TimetableScreen';
 
 const RootStackNavigator = StackNavigator(
   {
@@ -33,6 +35,12 @@ const RootStackNavigator = StackNavigator(
     },
     SingleTrainer:{
       screen: SingleTrainerScreen
+    },
+    ProgramScreen: {
+      screen: ProgramScreen
+    },
+    TimetableScreen: {
+      screen: TimetableScreen
     }
   },
   {
