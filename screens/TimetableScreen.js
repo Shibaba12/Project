@@ -19,8 +19,8 @@ export default class TimetableScreen extends React.Component {
         <View>
             <ScrollView horizontal>          
                 <Image
-                source={require('../assets/images/time.jpg')}
-                style={{ height: 371, flex: 1, width: 862 }}
+                source={require('../assets/images/lesson.jpg')}
+                style={{ height: 604, flex: 1, width: 575 }}
                 />             
             </ScrollView>
         </View>
