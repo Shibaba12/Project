@@ -29,16 +29,20 @@ export default class ProgramScreen extends React.Component {
   }
 
   render() {
+    const { navigate } = this.props.navigation;
     return (
-      <ScrollView style={styles.container}>
+      <ScrollView>
         <FlatList
           data={Object.values(this.state.programs)}
-          renderItem={({item}) => 
-          <ProgramCard
-            title={item.name}
-            programs={item.programs}
-            handlePress={this.handlePress.bind(this)}/>}
-          />
+          renderItem={({item})=> 
+                   <ProgramCard 
+                   title={item.name} 
+                   id={item.name}
+                   handlePress={this.handlePress.bind(this)}
+                   description={item.description}
+                   imageSource={item.url}
+                   />}
+        />
       </ScrollView>
     );
   }

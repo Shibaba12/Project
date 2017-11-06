@@ -43,7 +43,7 @@ export default class EquipmentScreen extends React.Component {
                         title={item.name} 
                         id={item.name}
                         handlePress={this.handlePress.bind(this)}
-                        description={item.description}
+                        
                         imageSource={item.url}
                         />}
           />
