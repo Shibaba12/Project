@@ -36,8 +36,8 @@ export default class TrainerScreen extends React.Component {
     });
   }
 
-  handlePress(name, description) {
-    this.props.navigation.navigate('SingleTrainer', {name: name, description: description})
+  handlePress(name, description, type) {
+    this.props.navigation.navigate('SingleTrainer', {name: name, description: description, type: type})
   }   
 
   render() {

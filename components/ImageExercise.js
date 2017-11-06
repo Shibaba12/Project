@@ -24,13 +24,20 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: "row",
-        backgroundColor: 'powderblue', 
-        borderColor: '#CDCDCD', 
-        borderWidth: 0.5,
+        backgroundColor: '#FFFFFF', 
+        borderWidth: 1,
+        borderRadius: 2,
+        borderColor: '#ddd', 
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 2,
+        elevation: 1,
         alignItems: 'center',
         paddingHorizontal: 16,
         marginHorizontal: 8,
         marginVertical: 4,
+        
     },
     textCont: {
         flex: 1,

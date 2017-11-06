@@ -9,14 +9,14 @@ import {
 import Layout from '../constants/Layout';
 
 
-export default class SingleTrainerScreen extends React.Component {
+export default class SingleEpScreen extends React.Component {
   static navigationOptions = {
-   title: "This is Trainer",
+   title: "This is Equipment",
   };
   constructor(props){
     super(props);
     this.state = {
-      trainers: []
+      machines: []
     }
   }
 
@@ -28,11 +28,11 @@ export default class SingleTrainerScreen extends React.Component {
       const { params } = this.props.navigation.state
     return (
       <ScrollView>
-            <Text style={{fontSize: 24, fontWeight: '500'}}>{params.name} </Text>
+            <Text style={{fontSize: 24, fontWeight: '500'}}>{params.name}</Text>
             <Text style={{fontSize: 24, fontWeight: '500'}}>{params.description} </Text>
-            <Text style={{fontSize: 24, fontWeight: '500'}}>{params.type}</Text>
+            <Text>{params.type}</Text>
             <Button
-            title='Booking time'
+            title='Go to Map'
             onPress={this.handleClick.bind(this)}
             />
         </ScrollView>

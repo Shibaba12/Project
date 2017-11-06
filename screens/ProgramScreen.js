@@ -31,7 +31,6 @@ export default class ProgramScreen extends React.Component {
   render() {
     return (
       <ScrollView style={styles.container}>
-        <Text>These are programs</Text>
         <FlatList
           data={Object.values(this.state.programs)}
           renderItem={({item}) => 

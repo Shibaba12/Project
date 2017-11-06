@@ -5,7 +5,8 @@ import { StackNavigator } from 'react-navigation';
 import MainTabNavigator from './MainTabNavigator';
 import SingleExerciseScreen from'../screens/SingleExerciseScreen';
 import registerForPushNotificationsAsync from '../api/registerForPushNotificationsAsync';
-import MapScreen from '../screens/MapScreen';
+import EquipmentScreen from '../screens/EquipmentScreen';
+import SingleEpScreen from '../screens/SingleEpScreen';
 import ShareScreen from'../screens/ShareScreen';
 import TrainerScreen from '../screens/TrainerScreen';
 import ExerciseScreen from'../screens/ExerciseScreen';
@@ -24,8 +25,11 @@ const RootStackNavigator = StackNavigator(
     ExerciseScreen: {
       screen: ExerciseScreen
     },
-    MapScreen: {
-      screen: MapScreen
+    EquipmentScreen: {
+      screen: EquipmentScreen
+    },
+    SingleEquipment: {
+      screen: SingleEpScreen
     },//add new screen here for navigation!!
     ShareScreen:{
       screen: ShareScreen

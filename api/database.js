@@ -88,6 +88,13 @@ class Database {
         })
     }
 
+    static getMachines(callback) {
+        let ref = firebase.database().ref().child('machines');
+        ref.on('value', (snap) => {
+            callback(snap.val())
+        })
+    }
+    
     static getUserData(uid, callback) {
         // let uid = firebase.auth().currentUser.uid;
         let path = firebase.database().ref().child('users').child(uid).child('details');
