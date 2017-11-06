@@ -40,7 +40,7 @@ class HomeButton extends Component {
 
                 <TouchableHighlight style={styles.touchable}
                 onPress={() => {
-                    this.props.handleClick('ExerciseScreen')
+                    this.props.handleClick('NewScreen')
                 }}>
                 <Image source={require('../assets/images/new.png')} style={{width: 100, height: 100}}/>
                 </TouchableHighlight>
