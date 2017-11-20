@@ -27,51 +27,46 @@ class LogInForm extends Component {
   render() {
     return (
       <View style={{marginTop: 22}}>
+        
         <Modal
           animationType="slide"
           transparent={false}
           visible={this.state.modalVisible}
           onRequestClose={() => {alert("Modal has been closed.")}}
           >
-         <View style={{marginTop: 22, justifyContent: 'center', alignItems: 'center', flex: 1}}>
-          <View>
-            
-            <Text style={{fontSize: 25, textAlign: 'center'}}>Please Enter Your Email and Password</Text>
-
-            <TextInput
-        style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-        onChangeText={(email) => this.setState({email})}
-        value={this.state.email}
-        placeholder={'Email'}
-      />
-      <TextInput
-        secureTextEntry
-        style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-        onChangeText={(password) => this.setState({password})}
-        value={this.state.password}
-        placeholder={'Password'}
-      />
-            
-           
-           
-            <Button
-            title="Log in"
-            onPress={() => {this.login()}}/>
-            <Button 
-            title="Cancel"
-            onPress={() => {this.setModalVisible(!this.state.modalVisible)}}/>
-
-
-
+          <View style={{marginTop: 22, justifyContent: 'center', alignItems: 'center', flex: 1}}>
+            <View>            
+              <Text style={{fontSize: 25, textAlign: 'center'}}>Please Enter Your Email and Password</Text>
+              <TextInput
+                 style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+                 onChangeText={(email) => this.setState({email})}
+                 value={this.state.email}
+                 placeholder={'Email'}
+              />
+              <TextInput
+                 secureTextEntry
+                 style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+                 onChangeText={(password) => this.setState({password})}
+                 value={this.state.password}
+                 placeholder={'Password'}
+              />
+                       
+              <Button
+                 title="Log in"
+                 onPress={() => {this.login()}}
+              />
+              <Button 
+                 title="Cancel"
+                 onPress={() => {this.setModalVisible(!this.state.modalVisible)}}
+              />
+            </View>
           </View>
-         </View>
         </Modal>
 
         <Button style={styles.buttonStyle}
-        title="Log In"
-        onPress={() => {
-          this.setModalVisible(true)
-        }}/>
+          title="Log In"
+          onPress={() => {this.setModalVisible(true)}}
+        />
 
       </View>
     );
@@ -82,8 +77,13 @@ const styles = StyleSheet.create({
     paddingVertical:20,
     flexDirection: 'column',
     alignItems:'center',
-    borderRadius:100,
-      
+    borderRadius:100, 
+    backgroundColor: 'transparent',     
+  },
+  backgroundImage:{
+    flex: 1,
+    resizeMode: 'cover', // or 'stretch',
+    position: 'absolute'
   }
 
 });

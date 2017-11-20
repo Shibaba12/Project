@@ -11,15 +11,15 @@ export default class NewScreen extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      programs: []
+      news: []
     }
   }
 
   componentDidMount() {
-    Database.getPrograms( (programs) => {
-      console.log(programs)
+    Database.getNews( (news) => {
+      console.log(news)
       this.setState({
-        programs: programs
+        news: news
       })
     });
   }
@@ -33,7 +33,7 @@ export default class NewScreen extends React.Component {
     return (
       <ScrollView>
         <FlatList
-          data={Object.values(this.state.programs)}
+          data={Object.values(this.state.news)}
           renderItem={({item})=> 
                    <NewsCard 
                    title={item.name} 

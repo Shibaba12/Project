@@ -20,9 +20,6 @@ export default TabNavigator(
     Plans: {
       screen: PlanScreen,
     },
-    Share: {
-      screen: ShareScreen,
-    },
     Profile:{
       screen: ProfileScreen,
     }
@@ -39,10 +36,6 @@ export default TabNavigator(
             break;
           case 'Plans':
             iconName = `md-paper`,
-            label = 'home'
-            break;
-          case 'Share':
-            iconName = `md-share`,
             label = 'home'
             break;
           case 'Profile':
@@ -67,9 +60,6 @@ export default TabNavigator(
             break;
           case 'Plans':
             label = 'Plan'
-            break;
-          case 'Share':
-            label = 'Share'
             break;
           case 'Profile':
             label = 'Profile';

@@ -37,11 +37,7 @@ export default class ExerciseScreen extends React.Component {
       }
     
       componentDidMount() {
-        Database.getExercises( (exercises) => {
-          this.setState({
-            exercises: exercises
-          })
-        });
+       
         
         Database.authState((user) => {
           if (user !== null) {

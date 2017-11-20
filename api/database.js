@@ -94,6 +94,13 @@ class Database {
             callback(snap.val())
         })
     }
+
+    static getNews(callback) {
+        let ref = firebase.database().ref().child('news');
+        ref.on('value', (snap) => {
+            callback(snap.val())
+        })
+    }
     
     static getUserData(uid, callback) {
         // let uid = firebase.auth().currentUser.uid;

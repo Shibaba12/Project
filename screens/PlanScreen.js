@@ -15,7 +15,7 @@ import Overlay from '../components/Overlay';
 
 // Importing Menu Item components that we have created
 import MenuItem from '../components/MenuItem';
-import ImageExercise from '../components/ImageExercise';
+import NewsCard from '../components/NewsCard';
 import InputTest from '../components/InputTest';
 
 export default class PlanScreen extends React.Component {
@@ -77,10 +77,18 @@ export default class PlanScreen extends React.Component {
 
       <View><Text>Recommend</Text></View>
       <ScrollView horizontal>           
-         <View style={styles.GroupC}>
-         <Overlay name={'TitleB'} image={require('../assets/images/salad.jpg')}/>   
-         <Overlay name={'TitleC'} image={require('../assets/images/salad.jpg')}/>               
-         </View> 
+        <View style={styles.GroupC}>
+          <FlatList horizontal
+            data={Object.values(this.state.exercises)}
+            renderItem={({item})=> 
+            <NewsCard 
+              title={item.name} 
+              id={item.name}
+              handlePress={this.handlePress.bind(this)}                    
+              imageSource={item.url}
+            />}
+          />                
+        </View> 
       </ScrollView >
 
       <View><Text>Body Building</Text></View>
@@ -90,18 +98,6 @@ export default class PlanScreen extends React.Component {
          <Overlay name={'TitleC'} image={require('../assets/images/salad.jpg')}/>               
          </View> 
       </ScrollView >
-
-      <FlatList
-             data={Object.values(this.state.exercises)}
-             renderItem={({item})=> 
-                        <ImageExercise 
-                        title={item.name} 
-                        id={item.name}
-                        handlePress={this.handlePress.bind(this)}
-                        description={item.type}
-                        imageSource={require('../assets/images/exercise.jpg')}
-                        />}
-             />
              
       </ScrollView>
     );
