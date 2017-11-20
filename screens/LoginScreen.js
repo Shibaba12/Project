@@ -1,96 +1,90 @@
 import React from 'react';
 import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
+  Modal, 
+  Text, 
+  TouchableHighlight, 
+  View, 
+  Button, 
   TextInput,
-  Button,
-  AvoidKeyboard,
-  Keyboard
+  StyleSheet,
+  Image,
+  KeyboardAvoidingView
+  
 } from 'react-native';
-import {FontAwesome} from '../assets/icons';
-import LogInForm from '../components/LogInForm';
+
+import Database from '../api/database';
 import RegistrationForm from '../components/RegistrationForm';
 
 export default class LoginScreen extends React.Component {
   static navigationOptions = {
     header: null
   };
-
-  constructor(props) {
-    super(props);
-  }
   
+  state = {
+    modalVisible: false,
+  }
+
+  setModalVisible(visible) {
+    this.setState({modalVisible: visible});
+  }
+
+  login() {
+    Database.login(this.state.email, this.state.password);
+  }
+
   render() {
     return (
-      <AvoidKeyboard
-        style={styles.screen}
-        onStartShouldSetResponder={ (e) => true}
-        onResponderRelease={ (e) => Keyboard.dismiss()}>
+      <KeyboardAvoidingView
+        style={styles.container}
+        behavior="padding">
         <View style={styles.header}>
-           <Text style={styles.textStyle}>Welcome to Body Center</Text>
-        </View>           
-        <Image 
-           source={require('../assets/images/bg.jpg')} 
-           style={styles.backgroundImage}
-        />
-        
-        <View style={styles.content}>
-          <View>
-            <TextInput Type='rounded' placeholder='Username'/>
-            <TextInput Type='rounded' placeholder='Password' secureTextEntry={true}/>
-            <Button 
-               style={{marginVertical: 20}} 
-               Type='large' 
-               text="Log in" 
-               onPress={() => {
-                this.props.navigation.goBack()
-              }}/>
-          </View>
-          <View style={styles.buttons}>
-            <Button style={styles.button} Type='social'>
-              <Text Type='awesome hero'>{FontAwesome.twitter}</Text>
-            </Button>
-            <Button style={styles.button} Type='social'>
-              <Text Type='awesome hero'>{FontAwesome.google}</Text>
-            </Button>
-            <Button style={styles.button} Type='social'>
-              <Text Type='awesome hero'>{FontAwesome.facebook}</Text>
-            </Button>
-          </View>
+          <Image style={styles.image} source={require('../assets/images/logo.jpg')}/>   
+          <Text Type='light h1'>Welcome to Body Center</Text>
+        </View>
 
+        <View style={styles.content}>
+          <View>                                      
+            <TextInput
+                 Type='rounded'
+                 style={styles.inputStyle}
+                 onChangeText={(email) => this.setState({email})}
+                 value={this.state.email}
+                 placeholder={'Email'}
+            />
+            <TextInput
+                 secureTextEntry
+                 Type='rounded'
+                 style={styles.inputStyle}
+                 onChangeText={(password) => this.setState({password})}
+                 value={this.state.password}
+                 placeholder={'Password'}
+            />                       
+            <Button style={styles.buttonStyle}
+                 title="Log in"
+                 onPress={() => {this.login()}}
+            />
+          </View>
+         
           <View style={styles.footer}>
             <View style={styles.textRow}>
-              <Text Type='primary3'>Don’t have an account?</Text>
-              <Button Type='clear' onPress={() => this.props.navigation.navigate('SignUp')}>
-                <Text Type='header6'> Sign up now </Text>
-              </Button>
+              <Text Type='primary3'>Don’t have an account?</Text><RegistrationForm/>              
             </View>
           </View>
-        </View>
-      </AvoidKeyboard>
-    );
+          
+        
+      </View>
+      <View style={{ height: 80 }} />
+      </KeyboardAvoidingView>
+    )
   }
 }
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#fff',
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-    flexDirection: 'column',   
-},
-  backgroundImage:{
-    flex: 1,
-    resizeMode: 'cover', // or 'stretch',
-    position: 'absolute'
-  },
-  screen: {
-    padding: 16,
-    flex: 1,
-    justifyContent: 'space-between'
+    justifyContent: 'center',
   },
   image: {
     height: 77,
@@ -100,13 +94,7 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    flex: 1,
-  },
-  textStyle: {
-    fontSize: 30, 
-    textAlign: 'center', 
-    backgroundColor: 'transparent', 
-    color: 'white'
+    flex: 1
   },
   content: {
     justifyContent: 'space-between'
@@ -114,18 +102,33 @@ const styles = StyleSheet.create({
   save: {
     marginVertical: 20
   },
-  buttons: {
-    flexDirection: 'row',
-    marginBottom: 24,
-    marginHorizontal: 24,
-    justifyContent: 'space-around',
-  },
   textRow: {
     flexDirection: 'row',
     justifyContent: 'center'
   },
-  button: {
-    borderColor: 'red'
+  footer: {},
+
+  buttonStyle: {
+    flex: 1,
+    alignSelf: 'stretch',
+    backgroundColor: '#fff',
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    marginLeft: 5,
+    marginRight: 5, 
+    
   },
-  footer: {}
+inputStyle:{
+  height: 50,
+  backgroundColor: '#fff',
+  marginHorizontal: 10,
+  marginVertical: 5,
+ // paddingVertical: 5,
+  // paddingHorizontal: 15,
+  width: window.width -10,
+  borderColor: '#ccc',
+  borderWidth: 1  ,
+  borderRadius: 25,
+}
 });

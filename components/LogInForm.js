@@ -36,37 +36,52 @@ class LogInForm extends Component {
           >
           <View style={{marginTop: 22, justifyContent: 'center', alignItems: 'center', flex: 1}}>
             <View>            
-              <Text style={{fontSize: 25, textAlign: 'center'}}>Please Enter Your Email and Password</Text>
+              <Text style={{fontSize: 25, textAlign: 'center'}}>Welcome to Body Center</Text>
               <TextInput
-                 style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+                 Type='rounded'
+                 style={styles.inputStyle}
                  onChangeText={(email) => this.setState({email})}
                  value={this.state.email}
                  placeholder={'Email'}
               />
               <TextInput
                  secureTextEntry
+                 Type='rounded'
                  style={{height: 40, borderColor: 'gray', borderWidth: 1}}
                  onChangeText={(password) => this.setState({password})}
                  value={this.state.password}
                  placeholder={'Password'}
               />
                        
-              <Button
+              <Button style={styles.buttonStyle}
                  title="Log in"
                  onPress={() => {this.login()}}
               />
-              <Button 
+              <Button style={styles.buttonStyle}
                  title="Cancel"
                  onPress={() => {this.setModalVisible(!this.state.modalVisible)}}
               />
+              <View style={styles.footer}>
+                <View style={styles.textRow}>
+                  <Text Type='primary3'>Don’t have an account?</Text>
+                  <Button Type='clear' onPress={() => this.props.navigation.navigate('RegistrationForm')}>
+                    <Text Type='header6'> Sign up now </Text>
+                  </Button>
+                </View>
+              </View>
+
             </View>
           </View>
         </Modal>
 
-        <Button style={styles.buttonStyle}
-          title="Log In"
-          onPress={() => {this.setModalVisible(true)}}
-        />
+        <TouchableHighlight
+        onPress={() => {
+          this.setModalVisible(true)
+        }}
+        style={{width: 50, height: 50, borderRadius: 100, backgroundColor: '#2e9cdb', justifyContent: 'center', }}>
+        <Text style={{alignSelf: 'center', color: 'white'}}>Log In</Text>
+        </TouchableHighlight>
+
 
       </View>
     );
@@ -74,17 +89,36 @@ class LogInForm extends Component {
 }
 const styles = StyleSheet.create({
   buttonStyle: {
-    paddingVertical:20,
-    flexDirection: 'column',
-    alignItems:'center',
-    borderRadius:100, 
-    backgroundColor: 'transparent',     
+      flex: 1,
+      alignSelf: 'stretch',
+      backgroundColor: '#fff',
+      borderRadius: 5,
+      borderWidth: 1,
+      borderColor: '#007aff',
+      marginLeft: 5,
+      marginRight: 5,   
+  },
+  inputStyle:{
+    color: '#000',
+    paddingRight: 5,
+    paddingLeft: 5,
+    fontSize: 18,
+    lineHeght: 23,
+    height: 40, 
+    borderColor: 'gray', 
+    borderWidth: 1,
+    borderRadius: 5,
   },
   backgroundImage:{
     flex: 1,
     resizeMode: 'cover', // or 'stretch',
     position: 'absolute'
-  }
+  },
+  textRow: {
+    flexDirection: 'row',
+    justifyContent: 'center'
+  },
+  footer: {}
 
 });
 
