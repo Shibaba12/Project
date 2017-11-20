@@ -11,6 +11,7 @@ import ShareScreen from '../screens/ShareScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import SettingScreen from '../screens/SettingsScreen';
 import ExerciseScreen from '../screens/ExerciseScreen';
+import LoginScreen from '../screens/LoginScreen';
 
 export default TabNavigator(
   {
@@ -21,7 +22,7 @@ export default TabNavigator(
       screen: PlanScreen,
     },
     Profile:{
-      screen: ProfileScreen,
+      screen: LoginScreen,
     }
   },
   {
