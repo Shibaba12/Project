@@ -88,8 +88,8 @@ class Database {
         })
     }
 
-    static getMachines(callback) {
-        let ref = firebase.database().ref().child('machines');
+    static getEquipment(callback) {
+        let ref = firebase.database().ref().child('equipment');
         ref.on('value', (snap) => {
             callback(snap.val())
         })

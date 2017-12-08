@@ -7,11 +7,7 @@ import Colors from '../constants/Colors';
 
 import HomeScreen from '../screens/HomeScreen';
 import PlanScreen from '../screens/PlanScreen';
-import ShareScreen from '../screens/ShareScreen';
 import ProfileScreen from '../screens/ProfileScreen';
-import SettingScreen from '../screens/SettingsScreen';
-import ExerciseScreen from '../screens/ExerciseScreen';
-import LoginScreen from '../screens/LoginScreen';
 
 export default TabNavigator(
   {
@@ -22,7 +18,7 @@ export default TabNavigator(
       screen: PlanScreen,
     },
     Profile:{
-      screen: LoginScreen,
+      screen: ProfileScreen,
     }
   },
   {
@@ -63,7 +59,7 @@ export default TabNavigator(
             label = 'Plan'
             break;
           case 'Profile':
-            label = 'Profile';
+            label = 'Me';
         }
         return (
          label

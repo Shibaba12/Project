@@ -7,7 +7,6 @@ import SingleExerciseScreen from'../screens/SingleExerciseScreen';
 import registerForPushNotificationsAsync from '../api/registerForPushNotificationsAsync';
 import EquipmentScreen from '../screens/EquipmentScreen';
 import SingleEpScreen from '../screens/SingleEpScreen';
-import ShareScreen from'../screens/ShareScreen';
 import TrainerScreen from '../screens/TrainerScreen';
 import ExerciseScreen from'../screens/ExerciseScreen';
 import SingleTrainerScreen from '../screens/SingleTrainerScreen';
@@ -32,9 +31,6 @@ const RootStackNavigator = StackNavigator(
     SingleEquipment: {
       screen: SingleEpScreen
     },//add new screen here for navigation!!
-    ShareScreen:{
-      screen: ShareScreen
-    },
     TrainerScreen:{
       screen: TrainerScreen
     },

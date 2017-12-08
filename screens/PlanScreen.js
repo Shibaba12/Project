@@ -15,7 +15,6 @@ import Overlay from '../components/Overlay';
 
 // Importing Menu Item components that we have created
 import MenuItem from '../components/MenuItem';
-import NewsCard from '../components/NewsCard';
 import InputTest from '../components/InputTest';
 
 export default class PlanScreen extends React.Component {
@@ -26,7 +25,7 @@ export default class PlanScreen extends React.Component {
     super(props);
     this.state = {
       exercises: []
-    }
+    }  
   }
 
   componentDidMount() {
@@ -36,6 +35,7 @@ export default class PlanScreen extends React.Component {
       })
     });
   }
+  
 
   handlePress(name, description) {
     this.props.navigation.navigate('SingleExercise', {name: name, description: description})
@@ -75,13 +75,13 @@ export default class PlanScreen extends React.Component {
       </TouchableHighlight>
       </View>
 
-      <View><Text>Recommend</Text></View>
+      <View><Text>Exercises</Text></View>
       <ScrollView horizontal>           
         <View style={styles.GroupC}>
           <FlatList horizontal
             data={Object.values(this.state.exercises)}
             renderItem={({item})=> 
-            <NewsCard 
+            <Overlay 
               title={item.name} 
               id={item.name}
               handlePress={this.handlePress.bind(this)}                    
@@ -91,11 +91,19 @@ export default class PlanScreen extends React.Component {
         </View> 
       </ScrollView >
 
-      <View><Text>Body Building</Text></View>
+      <View><Text>Programs</Text></View>
       <ScrollView horizontal>   
          <View style={styles.GroupC}>
-         <Overlay name={'TitleB'} image={require('../assets/images/salad.jpg')}/>
-         <Overlay name={'TitleC'} image={require('../assets/images/salad.jpg')}/>               
+         <FlatList horizontal
+            data={Object.values(this.state.programs)}
+            renderItem={({item})=> 
+            <Overlay 
+              title={item.name} 
+              id={item.name}
+              handlePress={this.handlePress.bind(this)}                    
+              imageSource={item.url}
+            />}
+          />               
          </View> 
       </ScrollView >
              

@@ -16,7 +16,7 @@ export default class SingleEpScreen extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      machines: []
+      equipment: []
     }
   }
 

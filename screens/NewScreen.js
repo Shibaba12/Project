@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView, StyleSheet, FlatList, Text } from 'react-native';
 import Database from '../api/database';
-import NewsCard from '../components/NewsCard'
+import Overlay from '../components/Overlay'
 
 export default class NewScreen extends React.Component {
   static navigationOptions = {
@@ -35,7 +35,7 @@ export default class NewScreen extends React.Component {
         <FlatList
           data={Object.values(this.state.news)}
           renderItem={({item})=> 
-                   <NewsCard 
+                   <Overlay 
                    title={item.name} 
                    id={item.name}
                    handlePress={this.handlePress.bind(this)}
