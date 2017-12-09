@@ -1,20 +1,19 @@
 import React, { Component }  from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
-class MenuItem extends Component {
+class EpCard extends Component {
     render() {
         return (
             <TouchableOpacity onPress={() => {this.props.handlePress(this.props.title, this.props.description)}}>
-            <View style={styles.container}>
-                <View style={styles.imageContainer}>
-                    <Image style={styles.image} source={{uri : this.props.imageSource}}/>
-                </View>
-                <View style={styles.textCont}>
-                    <Text style={styles.title}>{this.props.title}</Text>
-                    <Text style={styles.description}>{this.props.description}</Text>     
-                   
+                <View style={styles.container}>
+                    <View style={styles.imageContainer}>
+                        <Image style={styles.image} source={{uri : this.props.imageSource}}/>
                     </View>
-            </View>
+                    <View style={styles.textCont}>
+                        <Text style={styles.title}>{this.props.title}</Text>
+                        <Text style={styles.description}>{this.props.description}</Text>                       
+                    </View>
+                </View>
             </TouchableOpacity>
         )
     }
@@ -63,4 +62,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default MenuItem;
+export default EpCard;

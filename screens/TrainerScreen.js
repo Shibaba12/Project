@@ -11,7 +11,7 @@ import Layout from '../constants/Layout';
 import Database from '../api/database';
 // Importing Menu Item components that we have created
 import MenuItem from '../components/MenuItem';
-import ImageExercise from '../components/ImageExercise';
+import EpCard from '../components/EpCard';
 
 export default class TrainerScreen extends React.Component {
   static navigationOptions = {
@@ -44,7 +44,7 @@ export default class TrainerScreen extends React.Component {
         <FlatList
              data={Object.values(this.state.trainers)}
              renderItem={({item})=> 
-                        <ImageExercise 
+                        <EpCard 
                         title={item.name} 
                         id={item.name}
                         handlePress={this.handlePress.bind(this)}

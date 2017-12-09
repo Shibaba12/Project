@@ -7,7 +7,7 @@ class HomeButton extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <View style={{flex: 1,flexDirection: 'column', marginBottom:50,}}>
+                <View style={{flex: 1,flexDirection: 'column', marginBottom:60,}}>
                 <TouchableHighlight style={styles.touchable}
                 onPress={() => {
                    this.props.handleClick('EquipmentScreen')
@@ -23,7 +23,7 @@ class HomeButton extends Component {
                 </TouchableHighlight>
                 </View>
 
-                <View style={{flex: 1,flexDirection: 'column',}}>
+                <View style={{flex: 1,flexDirection: 'column'}}>
                 <TouchableHighlight style={styles.touchable}
                 onPress={() => {
                     this.props.handleClick('TimetableScreen')
@@ -45,13 +45,11 @@ class HomeButton extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    
+    flex: 2, 
     flexDirection: 'row',  
     marginLeft:50, 
     marginTop:50,
-    marginBottom:50,
-     
+    marginBottom:50,    
   },
   backgroundImage:{
     flex: 1,
@@ -62,13 +60,8 @@ const styles = StyleSheet.create({
     width: 100, 
     height: 100, 
     borderRadius: 200, 
+    marginBottom:50,
   },
-  button:{
-    width: 100, 
-    height: 100, 
-    borderRadius: 200,
-  }
-
 });
 
 

@@ -17,9 +17,9 @@ import * as firebase from 'firebase';
 
 export default class ProfileScreen extends React.Component {
     static navigationOptions = {
-        title: "Me",
-        
+        title: "Me",        
       };
+
       handlePress() {
         console.log('1234567');
       }
@@ -37,9 +37,7 @@ export default class ProfileScreen extends React.Component {
         }
       }
     
-      componentDidMount() {
-       
-        
+      componentDidMount() {               
         Database.authState((user) => {
           if (user !== null) {
           this.setState({uid: user.uid}, () =>{
@@ -49,8 +47,7 @@ export default class ProfileScreen extends React.Component {
               })
             });
           })}
-        })
-    
+        })    
       }
     
       sendFeedback(){
@@ -62,28 +59,26 @@ export default class ProfileScreen extends React.Component {
       }
 
   render() {
-    return (
-      <ScrollView>
-        <View style={[styles.header, styles.bordered]}>
-          
-          
+    return ( 
+      <View>  
+        <View style={styles.header}>
+          <Image source={require('../assets/images/user.jpg')} style={styles.profile}/>
+          <Text style={styles.names}>Judy</Text>
+        </View>     
+        <View style={styles.userInfo}>
+          <View style={styles.section}>
+            <Text style={styles.names}>50</Text>
+            <Text>Weight(kg)</Text>
+          </View>
+          <View style={styles.section}>
+            <Text style={styles.names}>165</Text>
+            <Text>Height(cm)</Text>
+          </View>
+          <View style={styles.section}>
+            <Text style={styles.names}>ccc</Text>
+            <Text>BMI</Text>
+          </View>
         </View>
-        <View style={[styles.userInfo, styles.bordered]}>
-          <View style={styles.section}>
-            <Text style={styles.space}>aaa</Text>
-            <Text>Posts</Text>
-          </View>
-          <View style={styles.section}>
-            <Text style={styles.space}>bbb</Text>
-            <Text>Followers</Text>
-          </View>
-          <View style={styles.section}>
-            <Text style={styles.space}>ccc</Text>
-            <Text>Following</Text>
-          </View>
-        </View>
-        
-            <Text>PRO SCREEN</Text>
             <Button title="Log out" onPress={() => {this.logout()}}/>
             <Button title="Log user Details" onPress={() => {console.log(this.state.details)}}/>
           <TextInput
@@ -92,48 +87,39 @@ export default class ProfileScreen extends React.Component {
             value={this.state.feedback}
           />
           <Button title="Send feedback" onPress={() => {this.sendFeedback()}}/>
-        </ScrollView>
+      </View>  
     );
   }
 }
-let styles = StyleSheet.create(theme => ({
-  root: {
-    backgroundColor: 'red'
-  },
+const styles = StyleSheet.create({
   header: {
     alignItems: 'center',
     paddingTop: 25,
-    paddingBottom: 17
+    paddingBottom: 17,
+    borderBottomWidth: 1,
+    borderColor: '#2e9cdb'
+  },
+  profile: {
+    width: 100, 
+    height: 100, 
+    borderRadius: 50,
+    marginBottom: 15
+  },
+  names: {
+    fontSize: 25, 
+    fontWeight: 'bold', 
+    color: 'black', 
+    backgroundColor: 'transparent',
+    marginBottom: 3
   },
   userInfo: {
     flexDirection: 'row',
     paddingVertical: 18,
-  },
-  bordered: {
     borderBottomWidth: 1,
-    borderColor: 'red'
+    borderColor: '#2e9cdb'
   },
   section: {
     flex: 1,
     alignItems: 'center'
   },
-  space: {
-    marginBottom: 3
-  },
-  separator: {
-    backgroundColor: 'theme.colors.border.base',
-    alignSelf: 'center',
-    flexDirection: 'row',
-    flex: 0,
-    width: 1,
-    height: 42
-  },
-  buttons: {
-    flexDirection: 'row',
-    paddingVertical: 8,
-  },
-  button: {
-    flex: 1,
-    alignSelf: 'center'
-  }
-  }));
+  });

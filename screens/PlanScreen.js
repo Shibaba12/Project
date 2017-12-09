@@ -16,7 +16,8 @@ import Overlay from '../components/Overlay';
 // Importing Menu Item components that we have created
 import MenuItem from '../components/MenuItem';
 import InputTest from '../components/InputTest';
-import PlanButton from '../components/PlanButton'
+import PlanButton from '../components/PlanButton';
+import EpCard from '../components/EpCard';
 
 
 export default class PlanScreen extends React.Component {
@@ -72,10 +73,7 @@ export default class PlanScreen extends React.Component {
 
       <PlanButton handleClick={this.handleClick.bind(this)}/>
 
-      <View >
-        <Text>Exercises</Text>
-        
-      </View>
+      <View ><Text style={styles.lableText}>  Recommend</Text></View>
       <ScrollView horizontal>           
         <View style={styles.GroupC}>
           <FlatList horizontal
@@ -91,7 +89,7 @@ export default class PlanScreen extends React.Component {
         </View> 
       </ScrollView >
 
-      <View><Text>Programs</Text></View>
+      <View><Text style={styles.lableText}>  Body Building</Text></View>
       <ScrollView horizontal>           
         <View style={styles.GroupC}>
           <FlatList horizontal
@@ -139,9 +137,11 @@ const styles = StyleSheet.create({
     color: 'white', 
     backgroundColor: 'transparent'
   },
-  buttontext:{
-    alignSelf: 'center', 
-    color: 'white'
+  lableText:{
+    fontSize: 15, 
+    alignItems: 'center', 
+    color: 'white', 
+    backgroundColor:'rgba(46,156,219,0.5)',
   },
   touchable:{
     width: 100, 

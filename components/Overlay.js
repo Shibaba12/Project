@@ -22,26 +22,26 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: "column",
         alignItems: 'center',
-        width: 360,
+        width: 330,
         height: 200,     
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.1,
+        shadowOpacity: 0.2,
         shadowRadius: 2,                     
         marginHorizontal: 8,   
         marginVertical: 4,          
     },
     imageContainer: {
-        width:360,
+        width:330,
         height:200,
         alignItems: 'center',
         justifyContent:'center' ,
         alignSelf:'stretch',
-        backgroundColor:'rgba(45, 156, 219, 0.4)'
+        backgroundColor:'rgba(0, 0, 0,0.4)'
     },
     image: {
         flex: 1,
-        width:360,
+        width:330,
         height:200,
         position: 'absolute'
     },

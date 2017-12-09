@@ -4,7 +4,8 @@ import {
   StyleSheet,
   Text,
   View,
-  Button
+  Button,
+  Image
 } from 'react-native';
 import Layout from '../constants/Layout';
 
@@ -30,7 +31,7 @@ export default class SingleExerciseScreen extends React.Component {
       <ScrollView>
             <Text style={{fontSize: 24, fontWeight: '500'}}>{params.name}</Text>
             <Text style={{fontSize: 24, fontWeight: '500'}}>{params.description}</Text>
-            <Text>{params.type}</Text>
+            <Image>{params.url}</Image>
             <Button
             title='Go to Map'
             onPress={this.handleClick.bind(this)}

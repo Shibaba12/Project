@@ -15,7 +15,7 @@ import Database from '../api/database';
 
 // Importing Menu Item components that we have created
 import MenuItem from '../components/MenuItem';
-import ImageExercise from '../components/ImageExercise';
+import EpCard from '../components/EpCard';
 import InputTest from '../components/InputTest';
 
 export default class ExerciseScreen extends React.Component {
@@ -57,25 +57,14 @@ export default class ExerciseScreen extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <ScrollView>
-        <Button
-        title="Only basic"
-        onPress={ () => {this.filterExercises('basic')}}/>
-        <Button
-        title="Only others"
-        onPress={ () => {this.filterExercises('others')}}/>
-        <Button
-        title="Only isolation"
-        onPress={ () => {this.filterExercises('isolation')}}/>
-
         <FlatList
           data={Object.values(this.state.exercises)}
           renderItem={({item}) =>
-          <ImageExercise
+          <EpCard
             title={item.name}
             id={item.name}
             type={item.type}
-            handlePress={() => {this.handlePress(item.name, item.description, item.type)}}
-            description={item.description}
+            handlePress={() => {this.handlePress(item.name,item.description,item.url)}}
             imageSource={item.url}/>}
           />
       </ScrollView>
