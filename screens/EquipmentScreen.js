@@ -27,7 +27,6 @@ export default class EquipmentScreen extends React.Component {
 
   componentDidMount() {
     Database.getEquipment( (equipment) => {
-      console.log(news)
       this.setState({
         equipment: equipment
       })
@@ -49,8 +48,7 @@ export default class EquipmentScreen extends React.Component {
                         <ImageExercise 
                         title={item.name} 
                         id={item.name}
-                        handlePress={this.handlePress.bind(this)}
-                        
+                        handlePress={this.handlePress.bind(this)}                       
                         imageSource={item.url}
                         />}
           />

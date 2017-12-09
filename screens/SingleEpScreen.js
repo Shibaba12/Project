@@ -11,7 +11,7 @@ import Layout from '../constants/Layout';
 
 export default class SingleEpScreen extends React.Component {
   static navigationOptions = {
-   title: "This is Equipment",
+   title: "Equipment",
   };
   constructor(props){
     super(props);

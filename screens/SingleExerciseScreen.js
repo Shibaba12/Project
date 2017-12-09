@@ -11,7 +11,7 @@ import Layout from '../constants/Layout';
 
 export default class SingleExerciseScreen extends React.Component {
   static navigationOptions = {
-   title: "This is Exercise",
+   title: "Do It",
   };
   constructor(props){
     super(props);
@@ -28,8 +28,8 @@ export default class SingleExerciseScreen extends React.Component {
       const { params } = this.props.navigation.state
     return (
       <ScrollView>
-            <Text style={{fontSize: 24, fontWeight: '500'}}>{params.name} exercise</Text>
-            <Text style={{fontSize: 24, fontWeight: '500'}}>{params.description} exercise</Text>
+            <Text style={{fontSize: 24, fontWeight: '500'}}>{params.name}</Text>
+            <Text style={{fontSize: 24, fontWeight: '500'}}>{params.description}</Text>
             <Text>{params.type}</Text>
             <Button
             title='Go to Map'

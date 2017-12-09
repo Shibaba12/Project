@@ -16,7 +16,6 @@ import Overlay from '../components/Overlay';
 // Importing Menu Item components that we have created
 import MenuItem from '../components/MenuItem';
 import InputTest from '../components/InputTest';
-import PlanButton from '../components/PlanButton'
 
 
 export default class PlanScreen extends React.Component {
@@ -70,10 +69,25 @@ export default class PlanScreen extends React.Component {
         <Text style={styles.myText}>BUILD YOUR BODY</Text>                        
       </View>
 
-      <PlanButton handleClick={this.handleClick.bind(this)}/>
+      <View style={styles.GroupB}>
+      <TouchableHighlight style={styles.touchable} 
+      onPress={() => {
+        this.setModalVisible(true)
+      }}>
+      <Image source={require('../assets/images/mine.png')}/>
+      </TouchableHighlight>
+      <TouchableHighlight style={styles.touchable}
+      onPress={() => {
+          this.setModalVisible(true)
+      }}>
+      <Image source={require('../assets/images/viewall.png')}/>
+      </TouchableHighlight>
+      </View>
 
-      <View >
-        <Text>Exercises</Text>
+      <View handleClick={this.handleClick.bind(this)}>
+        <Button title="More" onPress={() => {
+                    this.props.handleClick('TrainerScreen')
+                 }}/>
         
       </View>
       <ScrollView horizontal>           
