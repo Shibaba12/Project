@@ -29,18 +29,49 @@ export default class SingleExerciseScreen extends React.Component {
       const { params } = this.props.navigation.state
     return (
       <ScrollView>
-            <Text style={{fontSize: 24, fontWeight: '500'}}>{params.name}</Text>
-            <Text style={{fontSize: 24, fontWeight: '500'}}>{params.description}</Text>
-            <Image>{params.url}</Image>
-            <Button
-            title='Go to Map'
-            onPress={this.handleClick.bind(this)}
-            />
-        </ScrollView>
+        <Image style={styles.image}>{params.url}</Image>
+        <View style={styles.container}>    
+          <Text style={styles.title}>{params.name}</Text>
+          <Text style={styles.description}>{params.description}</Text>                
+        </View>
+      </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
-
+  container: {
+    flex: 1,
+    width: 360,
+    height: null,
+    alignItems: 'center',
+    justifyContent:'center',
+    backgroundColor: '#FFFFFF', 
+    borderWidth: 1,
+    borderRadius: 2,
+    borderColor: '#ddd', 
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
+    elevation: 1,
+    paddingHorizontal: 16,
+    marginHorizontal: 8,
+    marginVertical: 8,
+  },
+  title:{
+    fontSize: 24,
+    fontWeight: '500',
+    marginTop:20,
+  },
+  description:{
+    fontSize: 20,
+    fontWeight: '300',
+    marginTop:10,
+    marginBottom:20,
+  },
+  image: {  
+    width: 360,
+    height: 200,    
+  },
 });

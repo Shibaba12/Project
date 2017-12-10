@@ -48,7 +48,7 @@ export default class PlanScreen extends React.Component {
     this.props.navigation.navigate(Item, {key: '0'})
   }
   
-  handlePress(name, description) {
+  handlePress(name, description) { 
     this.props.navigation.navigate('SingleExercise', {name: name, description: description})
   }
 
@@ -82,7 +82,7 @@ export default class PlanScreen extends React.Component {
             <Overlay 
               title={item.name} 
               id={item.name}
-              handlePress={this.handlePress.bind(this)}                    
+              handlePress={() => {this.handlePress(item.name,item.description,item.url)}}
               imageSource={item.url}
             />}
           />                
@@ -98,7 +98,7 @@ export default class PlanScreen extends React.Component {
             <Overlay 
               title={item.name} 
               id={item.name}
-              handlePress={this.handlePress.bind(this)}                    
+              handlePress={() => {this.handlePress(item.name,item.description,item.url)}}
               imageSource={item.url}
             />}
           />                
