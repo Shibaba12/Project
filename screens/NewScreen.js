@@ -32,7 +32,7 @@ export default class NewScreen extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <ScrollView>
-        <FlatList
+        <FlatList style={styles.container}
           data={Object.values(this.state.news)}
           renderItem={({item})=> 
                    <Overlay 
@@ -50,7 +50,7 @@ export default class NewScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 15,
+    padding: 10,
     backgroundColor: '#fff',
   },
 });

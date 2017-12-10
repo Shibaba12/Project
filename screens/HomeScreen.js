@@ -44,7 +44,7 @@ export default class HomeScreen extends React.Component {
           </View>
         </View>
         <HomeButton handleClick={this.handleClick.bind(this)}/>
-      </View>
+      </View> 
     );
   }
 }

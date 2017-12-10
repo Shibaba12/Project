@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
   },
   GroupC:{
     flexDirection: 'row',
-    padding:20
+    padding:10
   },
   myText:{
     fontSize: 30, 

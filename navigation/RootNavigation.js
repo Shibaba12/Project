@@ -12,7 +12,8 @@ import ExerciseScreen from'../screens/ExerciseScreen';
 import SingleTrainerScreen from '../screens/SingleTrainerScreen';
 import ProgramScreen from '../screens/ProgramScreen';
 import TimetableScreen from '../screens/TimetableScreen';
-import NewScreen from '../screens/NewScreen'
+import NewScreen from '../screens/NewScreen';
+import MapScreen from '../screens/MapScreen'
 
 const RootStackNavigator = StackNavigator(
   {
@@ -45,6 +46,9 @@ const RootStackNavigator = StackNavigator(
     },
     NewScreen: {
       screen: NewScreen
+    },
+    MapScreen: {
+      screen: MapScreen
     }
   },
   {

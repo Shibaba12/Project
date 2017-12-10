@@ -7,8 +7,7 @@ class Overlay extends Component {
             <TouchableOpacity onPress={() => {this.props.handlePress(this.props.title, this.props.description)}}>
             <View style={styles.container}>
                 <Image style={styles.image} source={{uri : this.props.imageSource}}/>
-                <View style={styles.imageContainer}>
-                    
+                <View style={styles.imageContainer}>                   
                     <Text style={styles.title}>{this.props.title}</Text>
                 </View>
             </View> 
@@ -22,7 +21,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: "column",
         alignItems: 'center',
-        width: 330,
+        width: 340,
         height: 200,     
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
@@ -32,7 +31,7 @@ const styles = StyleSheet.create({
         marginVertical: 4,          
     },
     imageContainer: {
-        width:330,
+        width:340,
         height:200,
         alignItems: 'center',
         justifyContent:'center' ,
@@ -41,7 +40,7 @@ const styles = StyleSheet.create({
     },
     image: {
         flex: 1,
-        width:330,
+        width:340,
         height:200,
         position: 'absolute'
     },

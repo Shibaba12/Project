@@ -63,15 +63,15 @@ export default class ProfileScreen extends React.Component {
       <View>  
         <View style={styles.header}>
           <Image source={require('../assets/images/user.jpg')} style={styles.profile}/>
-          <Text style={styles.names}>Judy</Text>
+          <Text style={styles.names}>{this.state.details.name}</Text>
         </View>     
         <View style={styles.userInfo}>
           <View style={styles.section}>
-            <Text style={styles.names}>50</Text>
+            <Text style={styles.names}>{this.state.details.weight}</Text>
             <Text>Weight(kg)</Text>
           </View>
           <View style={styles.section}>
-            <Text style={styles.names}>165</Text>
+            <Text style={styles.names}>{this.state.details.height}</Text>
             <Text>Height(cm)</Text>
           </View>
           <View style={styles.section}>
@@ -91,6 +91,7 @@ export default class ProfileScreen extends React.Component {
     );
   }
 }
+//https://github.com/react-community/react-native-image-picker failed!
 const styles = StyleSheet.create({
   header: {
     alignItems: 'center',
