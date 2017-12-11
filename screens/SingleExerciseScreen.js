@@ -29,7 +29,7 @@ export default class SingleExerciseScreen extends React.Component {
       const { params } = this.props.navigation.state
     return (
       <ScrollView>
-        <Image style={styles.image}>{params.url}</Image>
+        <Image style={styles.image} source={{uri : this.props.imageSource}}/>
         <View style={styles.container}>    
           <Text style={styles.title}>{params.name}</Text>
           <Text style={styles.description}>{params.description}</Text>                
