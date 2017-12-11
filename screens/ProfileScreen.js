@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 
 import Layout from '../constants/Layout';
+import Feedback from '../components/Feedback';
 import Database from '../api/database';
 import * as firebase from 'firebase';
 
@@ -79,14 +80,19 @@ export default class ProfileScreen extends React.Component {
             <Text>BMI</Text>
           </View>
         </View>
-            <Button title="Log out" onPress={() => {this.logout()}}/>
-            <Button title="Log user Details" onPress={() => {console.log(this.state.details)}}/>
-          <TextInput
-            style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-            onChangeText={(feedback) => this.setState({feedback})}
-            value={this.state.feedback}
-          />
-          <Button title="Send feedback" onPress={() => {this.sendFeedback()}}/>
+        <View style={styles.GroupB}>
+
+          <TouchableOpacity 
+            onPress={() => { this.props.handleClick()}}>
+            <Image source={require('../assets/images/track.png')} style={{width: 100, height: 100}}/>
+          </TouchableOpacity>
+          
+          <View style={styles.textRow}><Feedback/></View>
+         
+          <TouchableOpacity onPress={() => {this.logout()}}>            
+            <Image source={require('../assets/images/logoff.png')} style={{width: 100, height: 100}}/>
+          </TouchableOpacity>               
+        </View>          
       </View>  
     );
   }
@@ -98,7 +104,7 @@ const styles = StyleSheet.create({
     paddingTop: 25,
     paddingBottom: 17,
     borderBottomWidth: 1,
-    borderColor: '#2e9cdb'
+    borderColor: '#2D9CDB'
   },
   profile: {
     width: 100, 
@@ -122,5 +128,16 @@ const styles = StyleSheet.create({
   section: {
     flex: 1,
     alignItems: 'center'
+  },
+  GroupB: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginTop:50,  
+  },
+ 
+  textRow: {
+    flexDirection: 'row',
+    justifyContent: 'center'
   },
   });
