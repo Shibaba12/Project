@@ -38,9 +38,8 @@ export default class ExerciseScreen extends React.Component {
     });
   }
 
-  handlePress(name, description, type) {
-    console.log(type)
-    this.props.navigation.navigate('SingleExercise', {name: name, description: description})
+  handlePress(name, description, url) {
+    this.props.navigation.navigate('SingleExercise', {name: name, description: description, url:url})
   }
 
   //  filterExercises(name) {
@@ -53,7 +52,7 @@ export default class ExerciseScreen extends React.Component {
   //    })
   //  }
 
-  render() {
+  render() { 
     const { navigate } = this.props.navigation;
     return (
       <ScrollView>

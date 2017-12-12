@@ -28,10 +28,11 @@ export default class SingleEpScreen extends React.Component {
   render() {
       const { params } = this.props.navigation.state
     return (
-      <ScrollView>
+      
         <View>
-          <Image style={styles.image} source={{uri : this.props.imageSource}}/>
-        </View>
+          <Image style={styles.image} source={{uri : params.url}}/>
+        
+        <ScrollView>
         <View style={styles.container}>
           <Text style={styles.title}>{params.name}</Text>
           <Text style={styles.description}>{params.description} </Text>
@@ -46,6 +47,7 @@ export default class SingleEpScreen extends React.Component {
             onPress={this.handleClick.bind(this)}
             />
         </ScrollView>
+        </View>
     );
   }
 }
@@ -95,9 +97,24 @@ const styles = StyleSheet.create({
     marginBottom:20,
   },
   
-  image: {  
+  image: { 
+    flex: 1,
     width: 360,
-    height: 200,    
+    height: 360,
+    alignItems: 'center',
+    justifyContent:'center',
+    backgroundColor: '#FFFFFF', 
+    borderWidth: 1,
+    borderRadius: 2,
+    borderColor: '#ddd', 
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
+    elevation: 1,
+    paddingHorizontal: 16,
+    marginHorizontal: 8,
+    marginVertical: 8,   
   },
 
 });
